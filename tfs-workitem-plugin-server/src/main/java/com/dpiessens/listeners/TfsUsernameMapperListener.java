@@ -59,6 +59,10 @@ public class TfsUsernameMapperListener implements UserModelListener {
         // Not used
     }
 
+    public void userRolesChanged(@NotNull User user) {
+        // Not used
+    }
+
     /**
      * Registers the plugin with the system
      */

@@ -1,10 +1,7 @@
 package com.dpiessens;
 
 import com.intellij.openapi.diagnostic.Logger;
-import jetbrains.buildServer.issueTracker.AbstractIssueProvider;
-import jetbrains.buildServer.issueTracker.IssueData;
-import jetbrains.buildServer.issueTracker.IssueFetcher;
-import jetbrains.buildServer.issueTracker.IssueMention;
+import jetbrains.buildServer.issueTracker.*;
 import jetbrains.buildServer.util.cache.EhCacheUtil;
 import jetbrains.buildServer.vcs.*;
 import net.sf.ehcache.Cache;
@@ -28,8 +25,8 @@ public class TfsIssueProvider extends AbstractIssueProvider {
     private final VcsManager vcsManager;
     private final Cache myCache;
 
-    public TfsIssueProvider(IssueFetcher fetcher, TfsDataProvider dataProvider, VcsManager vcsManager, EhCacheUtil cacheUtil) {
-        super("tfs-workitems", fetcher);
+    public TfsIssueProvider(@NotNull final IssueProviderType type, IssueFetcher fetcher, TfsDataProvider dataProvider, VcsManager vcsManager, EhCacheUtil cacheUtil) {
+        super(type.getType(), fetcher);
         this.dataProvider = dataProvider;
         this.vcsManager = vcsManager;
         this.myCache = cacheUtil.createCache("tfsIssueMentions");

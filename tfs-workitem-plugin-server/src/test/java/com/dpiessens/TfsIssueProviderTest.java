@@ -8,6 +8,7 @@ import jetbrains.buildServer.vcs.SVcsModification;
 import jetbrains.buildServer.vcs.VcsManager;
 import jetbrains.buildServer.vcs.VcsModification;
 import jetbrains.buildServer.vcs.VcsRootInstance;
+import jetbrains.buildServer.web.openapi.PluginDescriptor;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -31,8 +32,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         Boolean usePrefix = provider.useIdPrefix();
 
@@ -50,8 +55,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         String providerType = provider.getType();
 
@@ -69,8 +78,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         Boolean usePrefix = provider.isBatchFetchSupported();
 
@@ -88,8 +101,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(true);
@@ -113,8 +130,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -140,8 +161,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -167,8 +192,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(true);
@@ -194,8 +223,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -226,8 +259,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -266,8 +303,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -308,8 +349,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);
@@ -357,8 +402,12 @@ public class TfsIssueProviderTest {
         final TfsDataProvider dataProvider = mock(TfsDataProvider.class);
         final VcsManager vcsManager = mock(VcsManager.class);
         final EhCacheUtil cacheUtil = mock(EhCacheUtil.class);
+        final PluginDescriptor pluginDescriptor = mock(PluginDescriptor.class);
+        when(pluginDescriptor.getPluginResourcesPath("admin/editIssueProvider.jsp")).thenReturn("admin/editIssueProvider.jsp");
+        when(pluginDescriptor.getPluginResourcesPath("popup.jsp")).thenReturn("popup.jsp");
+        final TfsIssueProviderType type = new TfsIssueProviderType(pluginDescriptor);
 
-        TfsIssueProvider provider = new TfsIssueProvider(fetcher, dataProvider, vcsManager, cacheUtil);
+        TfsIssueProvider provider = new TfsIssueProvider(type, fetcher, dataProvider, vcsManager, cacheUtil);
 
         final VcsModification modification = mock(VcsModification.class);
         when(modification.isPersonal()).thenReturn(false);

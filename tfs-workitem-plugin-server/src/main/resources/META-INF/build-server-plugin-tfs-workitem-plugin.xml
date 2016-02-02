@@ -2,10 +2,11 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans default-autowire="constructor">
     <bean id="tfsIssueProviderFactory" class="com.dpiessens.TfsIssueProviderFactory">
-        <constructor-arg index="0" ref="tfsIssueFetcher"/>
-        <constructor-arg index="1" ref="tfsDataProvider" />
-        <constructor-arg index="2" ref="vcsManager" />
-        <constructor-arg index="3" ref="ehCacheUtil"/>
+        <constructor-arg index="0" ref="tfsIssueProviderType"/>
+        <constructor-arg index="1" ref="tfsIssueFetcher"/>
+        <constructor-arg index="2" ref="tfsDataProvider" />
+        <constructor-arg index="3" ref="vcsManager" />
+        <constructor-arg index="4" ref="ehCacheUtil"/>
     </bean>
     <bean id="tfsIssueFetcher" class="com.dpiessens.TfsIssueFetcher">
         <constructor-arg index="0" ref="ehCacheUtil"/>
@@ -16,4 +17,5 @@
           init-method="register"/>
     <bean id="tfsUsernameMapperConfig" class="com.dpiessens.listeners.UsernameMapperConfigImpl"/>
     <bean id="tfsUsernameListenerExtension" class="com.dpiessens.listeners.TfsUsernameListenerExtension"/>
+    <bean id="tfsIssueProviderType" class="com.dpiessens.TfsIssueProviderType"/>
 </beans>
